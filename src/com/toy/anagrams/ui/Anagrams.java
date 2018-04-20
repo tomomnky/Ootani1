@@ -223,8 +223,8 @@ public class Anagrams extends JFrame {
 
         getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
-        fileMenu.setMnemonic('F');//ここをチーム名　メンバーにする
-        fileMenu.setText("File");
+        fileMenu.setMnemonic('大');//ここをチーム名　メンバーにする
+        fileMenu.setText("大谷　仲山友海・鳥居みなほ・湯浅郁");
         
 
         aboutMenuItem.setMnemonic('A');

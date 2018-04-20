@@ -80,11 +80,11 @@ public class Anagrams extends JFrame {
 
     /** Creates new form Anagrams */
     public Anagrams() {
-        wordLibrary = WordLibrary.getDefault();
+        wordLibrary = WordLibrary.getDefault(); //staticwordのコンストラクタ
         
         initComponents();
         getRootPane().setDefaultButton(guessButton);
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));//スクランブルワード取り出し
         pack();
         guessedWord.requestFocusInWindow();
         // Center in the screen
@@ -104,6 +104,7 @@ public class Anagrams extends JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         mainPanel = new javax.swing.JPanel();
+        //teamLabel = new javax.swing.JLabel();
         scrambledLabel = new javax.swing.JLabel();
         scrambledWord = new javax.swing.JTextField();
         guessLabel = new javax.swing.JLabel();
@@ -119,7 +120,7 @@ public class Anagrams extends JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
 
-        setTitle("AnagramsAnagrams");
+        setTitle("アルファベットを並べ替えて単語を作りなさい");//ウィンドウのタイトル  アルファベットを並べ替えて単語を作りなさい
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);
@@ -129,8 +130,9 @@ public class Anagrams extends JFrame {
         mainPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(12, 12, 12, 12));
         mainPanel.setMinimumSize(new java.awt.Dimension(297, 200));
         mainPanel.setLayout(new java.awt.GridBagLayout());
+    
 
-        scrambledLabel.setText("Scrambled Word:");
+        scrambledLabel.setText("ScrambledWords:");//問題
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -150,7 +152,7 @@ public class Anagrams extends JFrame {
 
         guessLabel.setDisplayedMnemonic('Y');
         guessLabel.setLabelFor(guessedWord);
-        guessLabel.setText("Your Guess:");
+        guessLabel.setText("Your Guess:");//こたえ
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
@@ -206,7 +208,7 @@ public class Anagrams extends JFrame {
         gridBagConstraints.weighty = 1.0;
         mainPanel.add(buttonsPanel, gridBagConstraints);
 
-        levelLabel.setText("Level:");
+        levelLabel.setText("Level:");//レベル
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -221,8 +223,9 @@ public class Anagrams extends JFrame {
 
         getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
-        fileMenu.setMnemonic('F');
+        fileMenu.setMnemonic('F');//ここをチーム名　メンバーにする
         fileMenu.setText("File");
+        
 
         aboutMenuItem.setMnemonic('A');
         aboutMenuItem.setText("About");
@@ -257,7 +260,7 @@ public class Anagrams extends JFrame {
         wordIdx = (wordIdx + 1) % wordLibrary.getSize();
 
         feedbackLabel.setText(" ");
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));//2回目以降のスクランブルワード取り出し
         guessedWord.setText("");
         getRootPane().setDefaultButton(guessButton);
 
@@ -283,6 +286,13 @@ public class Anagrams extends JFrame {
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
         System.exit(0);
     }//GEN-LAST:event_exitForm
+    
+    //問題の文字列を作るメソッド
+    /*
+     //答えの単語を取り出して配列にいれる
+     //１番目とランダム番目を変更する。
+      * 文字列の半分以上回す。レベル増やすと増えるように
+     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;

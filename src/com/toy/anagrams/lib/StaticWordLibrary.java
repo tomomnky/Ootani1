@@ -81,7 +81,8 @@ final class StaticWordLibrary extends WordLibrary {
         "hotjava",
         "vertex",
         "unsigned",
-        "traditional"
+        "traditional",
+        "applle"
     //ここに追加    
     };
 
@@ -130,7 +131,8 @@ final class StaticWordLibrary extends WordLibrary {
         "ohjtvaa",
         "evtrxe",
         "nuisngde",
-        "rtdatioialn"
+        "rtdatioialn",
+        "pplea"
         //問題追加
     };
     

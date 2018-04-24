@@ -305,6 +305,29 @@ public class Anagrams extends JFrame {
 
 	arrayQ[0] = arrayQc[ran1];
 	arrayQ[ran1] = arrayQc[0];
+	
+	/*
+    指定されたlevelを取得
+   */
+	Object level = selectLevel.getSelectedItem();
+
+
+
+    int l = 0;
+    //レベル別に文字の並べ替え数を変える。
+	if(level == "Level 1") l=1;
+	else if(level == "Level 2") l=3;
+	else l=5;
+
+		for(int i=0; i<l; i++){
+		int random1 = r.nextInt(word.length());
+		int random2 = r.nextInt(word.length());
+
+		arrayQ[Math.abs(random1-random2)] = arrayQc[random1];
+		arrayQ[random1] = arrayQc[Math.abs(random1-random2)];
+		}
+
+
 
 	String ans = String.valueOf(arrayQ);
 	return ans;
